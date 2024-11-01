@@ -1,10 +1,13 @@
 <div class="description user_content enhanced" data-resource-type="assignment.body" data-resource-id="1682350"><h2>Min Heap</h2>
 <p>Implement a min heap template using an underlying vector container.</p>
-<p>You must implement the functions: insert, extractMin, print and sort (takes in array and sorts it)</p>
-<p>Implementation techniques described in <a class="inline_disabled external" href="https://learning-oreilly-com.ezproxy.skylinecollege.edu/library/view/data-structures-the/9781098156602/c07.xhtml#h1-502604c07-0005" target="_blank" rel="noreferrer noopener"><span>Chapter 7 of textbook</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
+<p>You must implement the functions: insert, extractMin, print and sort.</p>
+<p>Your implementation of extractMin should return the minimum value and remove it from the heap.</p>
+<p>Your print function can print the elements in any order. I recommend pre-order traversal so the minimum is printed first.</p>
+<p>Your sort function should take in an array of values and sort it.</p>
+<p>Implementation techniques from the slides are further described in <a class="inline_disabled external" href="https://learning-oreilly-com.ezproxy.skylinecollege.edu/library/view/data-structures-the/9781098156602/c07.xhtml#h1-502604c07-0005" target="_blank" rel="noreferrer noopener"><span>Chapter 7 of textbook</span><span class="external_link_icon" style="margin-inline-start: 5px; display: inline-block; text-indent: initial; " role="presentation"><svg viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" style="width:1em; height:1em; vertical-align:middle; fill:currentColor">
     <path d="M1226.667 267c88.213 0 160 71.787 160 160v426.667H1280v-160H106.667v800C106.667 1523 130.56 1547 160 1547h1066.667c29.44 0 53.333-24 53.333-53.333v-213.334h106.667v213.334c0 88.213-71.787 160-160 160H160c-88.213 0-160-71.787-160-160V427c0-88.213 71.787-160 160-160Zm357.706 442.293 320 320c20.8 20.8 20.8 54.614 0 75.414l-320 320-75.413-75.414 228.907-228.906H906.613V1013.72h831.254L1508.96 784.707l75.413-75.414Zm-357.706-335.626H160c-29.44 0-53.333 24-53.333 53.333v160H1280V427c0-29.333-23.893-53.333-53.333-53.333Z" fill-rule="evenodd"></path>
 </svg>
-<span class="screenreader-only">Links to an external site.</span></span></a>.</p>
+<span class="screenreader-only">Links to an external site.</span></span></a>. (You may need to go through the library link to log in to O'Reilly first: <a title="Accessing the Textbook" href="https://smccd.instructure.com/courses/60169/pages/accessing-the-textbook" data-course-type="wikiPages" data-published="true">Accessing the Textbook</a>)</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>Pair Programming:</h2>
