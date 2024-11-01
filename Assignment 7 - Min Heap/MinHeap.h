@@ -57,6 +57,8 @@ int MinHeap<T>::heapify(T value) {
         swap(right(valueIndex), valueIndex, value);
         heapify(value);
     }
+
+    else return 0; //When all good, break
 }
 
 template <typename T>
