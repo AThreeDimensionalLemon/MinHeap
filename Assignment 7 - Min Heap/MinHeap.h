@@ -16,18 +16,19 @@ class MinHeap {
 private:
     vector<T> heap;
 
-    //Helper function for code reuse and recursion
-    int heapify(T value); 
+    int heapify(T value);
 
-    //Functions for getting relevant index in relation to a vertex's index
-    int parent(int index);
-    int left(int index);
-    int right(int index);
+    //Swap values when heapifying
+    void swap(int swapIndex, int valueIndex, T value);
+
+    int parent(int index); //Get index of parent
+    int left(int index); //Get index of left child
+    int right(int index); //Get index of right child
 
 public:
     MinHeap();
     void insert(T input);
-    T extractMin();
+    T extractMin(); //Return and delete minimum value
     void print();
     void sort(T input);
 };
@@ -39,29 +40,30 @@ int MinHeap<T>::heapify(T value) {
     if (valueIndex != 0 and
         value > heap[parent(valueIndex)])
     { //Swap if greater than parent
-        T swappedValue = heap[parent(valueIndex)];
-        heap[parent(valueIndex)] = value;
-        heap[valueIndex] = swappedValue;
+        swap(parent(valueIndex), valueIndex, value);
         heapify(value);
     }
 
     else if (left(valueIndex) < heap.size() and
         value < heap[left(valueIndex)])
     { //Swap if less than left child
-        T swappedValue = heap[left(valueIndex)];
-        heap[left(valueIndex)] = value;
-        heap[valueIndex] = swappedValue;
+        swap(left(valueIndex), valueIndex, value);
         heapify(value);
     }
 
     else if (right(valueIndex) < heap.size() and
         value < heap[right(valueIndex)])
     { //Swap if less than right child
-        T swappedValue = heap[right(valueIndex)];
-        heap[right(valueIndex)] = value;
-        heap[valueIndex] = swappedValue;
+        swap(right(valueIndex), valueIndex, value);
         heapify(value);
     }
+}
+
+template <typename T>
+void MinHeap<T>::swap(int swapIndex, int valueIndex, T value) {
+    T swappedValue = heap[swapIndex];
+    heap[swapIndex] = value;
+    heap[valueIndex] = swappedValue;
 }
 
 template <typename T>
