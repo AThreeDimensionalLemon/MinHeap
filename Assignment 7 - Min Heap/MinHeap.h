@@ -38,22 +38,22 @@ int MinHeap<T>::heapify(T value) {
     int valueIndex = find(heap.begin(), heap.end(), value) - heap.begin();
 
     if (valueIndex != 0 and
-        value > heap[parent(valueIndex)])
-    { //Swap if greater than parent
+        value < heap[parent(valueIndex)])
+    { //Swap if less than parent
         swap(parent(valueIndex), valueIndex, value);
         heapify(value);
     }
 
     else if (left(valueIndex) < heap.size() and
-        value < heap[left(valueIndex)])
-    { //Swap if less than left child
+        value > heap[left(valueIndex)])
+    { //Swap if greater than left child
         swap(left(valueIndex), valueIndex, value);
         heapify(value);
     }
 
     else if (right(valueIndex) < heap.size() and
-        value < heap[right(valueIndex)])
-    { //Swap if less than right child
+        value > heap[right(valueIndex)])
+    { //Swap if greater than right child
         swap(right(valueIndex), valueIndex, value);
         heapify(value);
     }
