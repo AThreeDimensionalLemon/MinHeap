@@ -26,4 +26,8 @@ int main() {
     //Test extractMin function
     cout << "Testing extractMin function: ";
     cout << intTest.extractMin() << endl;
+
+    //Test print function
+    cout << "Testing print function: ";
+    intTest.print();
 }

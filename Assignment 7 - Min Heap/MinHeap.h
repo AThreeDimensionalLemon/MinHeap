@@ -98,13 +98,14 @@ template <typename T>
 T MinHeap<T>::extractMin() {
     T root = heap[0];
     heap[0] = heap[heap.size() - 1];
+    heap.pop_back();
     heapify(heap[0]);
     return root;
 }
 
 template <typename T>
 void MinHeap<T>::print() {
-
+    for (auto vertex : heap) cout << vertex << ", ";
 }
 
 template <typename T>
