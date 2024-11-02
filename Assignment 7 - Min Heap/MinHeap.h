@@ -96,7 +96,10 @@ void MinHeap<T>::insert(T input) {
 
 template <typename T>
 T MinHeap<T>::extractMin() {
-    
+    T root = heap[0];
+    heap[0] = heap[heap.size() - 1];
+    heapify(heap[0]);
+    return root;
 }
 
 template <typename T>
@@ -105,6 +108,6 @@ void MinHeap<T>::print() {
 }
 
 template <typename T>
-void MinHeap<T>::sort(T input) {
-    
+void MinHeap<T>::sort(T inInput) {
+
 }

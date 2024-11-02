@@ -22,4 +22,8 @@ int main() {
     int randomIntegers[10] = { 42, 17, 89, 3, 56, 74, 23, 65, 38, 91 };
     for (auto integer : randomIntegers) intTest.insert(integer);
     cout << "Done!" << endl;
+
+    //Test extractMin function
+    cout << "Testing extractMin function: ";
+    cout << intTest.extractMin() << endl;
 }
