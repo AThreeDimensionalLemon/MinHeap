@@ -1,7 +1,7 @@
 // 
 // Name: main.cpp
 // Author: Eisig Liang
-// Last update: 31/10/24
+// Last update: 3/11/24
 // Purpose: Test min heap implementation
 // Notices:
 //     1. ChatGPT was used to generated test cases
@@ -9,6 +9,7 @@
 
 #include "MinHeap.h"
 #include <iostream>
+#include <array>
 using namespace std;
 
 int main() {
@@ -30,4 +31,11 @@ int main() {
     //Test print function
     cout << "Testing print function: ";
     intTest.print();
+
+    //Test with characters and sort function
+    cout << "Testing MinHeap class with char types:" << endl;
+    MinHeap<array<char, 10>> charTest;
+    cout << "Testing sort function: ";
+    array<char, 10> randomCharacters = { 'g', 'Z', 'p', 'Q', 'r', 'L', 'x', 'T', 'k', 'M' };
+    charTest.sort(randomCharacters);
 }
