@@ -1,7 +1,7 @@
 // 
 // Name: MinHeap.h
 // Author: Eisig Liang
-// Last update: 1/11/24
+// Last update: 2/11/24
 // Purpose: Do various things with a min heap
 // 
 
@@ -21,6 +21,8 @@ private:
     //Swap values when heapifying
     void swap(int swapIndex, int valueIndex, T value);
 
+    int recursivePrint(T root);
+
     int parent(int index); //Get index of parent
     int left(int index); //Get index of left child
     int right(int index); //Get index of right child
@@ -29,7 +31,7 @@ public:
     MinHeap();
     void insert(T input);
     T extractMin(); //Return and delete minimum value
-    void print();
+    void print(); //Start of recursivePrint
     void sort(T input);
 };
 
@@ -45,14 +47,14 @@ int MinHeap<T>::heapify(T value) {
     }
 
     else if (left(valueIndex) < heap.size() and
-        value > heap[left(valueIndex)])
+        value >= heap[left(valueIndex)])
     { //Swap if greater than left child
         swap(left(valueIndex), valueIndex, value);
         heapify(value);
     }
 
     else if (right(valueIndex) < heap.size() and
-        value > heap[right(valueIndex)])
+        value >= heap[right(valueIndex)])
     { //Swap if greater than right child
         swap(right(valueIndex), valueIndex, value);
         heapify(value);
@@ -66,6 +68,17 @@ void MinHeap<T>::swap(int swapIndex, int valueIndex, T value) {
     T swappedValue = heap[swapIndex];
     heap[swapIndex] = value;
     heap[valueIndex] = swappedValue;
+}
+
+template <typename T>
+int MinHeap<T>::recursivePrint(T currentIndex) {
+
+    if (currentIndex >= heap.size()) return 0; //Base case
+
+    cout << heap[currentIndex] << endl;
+
+    recursivePrint(left(currentIndex));
+    recursivePrint(right(currentIndex));
 }
 
 template <typename T>
@@ -105,10 +118,10 @@ T MinHeap<T>::extractMin() {
 
 template <typename T>
 void MinHeap<T>::print() {
-    for (auto vertex : heap) cout << vertex << ", ";
+    recursivePrint(0);
 }
 
 template <typename T>
-void MinHeap<T>::sort(T inInput) {
-
+void MinHeap<T>::sort(T input) {
+    
 }
