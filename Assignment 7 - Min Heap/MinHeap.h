@@ -1,7 +1,7 @@
 // 
 // Name: MinHeap.h
 // Author: Eisig Liang
-// Last update: 3/11/24
+// Last update: 5/11/24
 // Purpose: Do various things with a min heap
 // 
 
@@ -21,7 +21,7 @@ private:
     //Swap values when heapifying
     void swap(int swapIndex, int valueIndex, T value);
 
-    int recursivePrint(T root);
+    int recursivePrint(int root);
 
     int parent(int index); //Get index of parent
     int left(int index); //Get index of left child
@@ -32,7 +32,7 @@ public:
     void insert(T input);
     T extractMin(); //Return and delete minimum value
     void print(); //Start of recursivePrint
-    void sort(T input);
+    void sort(T input[], int inputSize);
 };
 
 template <typename T>
@@ -71,7 +71,7 @@ void MinHeap<T>::swap(int swapIndex, int valueIndex, T value) {
 }
 
 template <typename T>
-int MinHeap<T>::recursivePrint(T currentIndex) {
+int MinHeap<T>::recursivePrint(int currentIndex) {
 
     if (currentIndex >= heap.size()) return 0; //Base case
 
@@ -122,6 +122,10 @@ void MinHeap<T>::print() {
 }
 
 template <typename T>
-void MinHeap<T>::sort(T input) {
-    
+void MinHeap<T>::sort(T input[], int inputSize) {
+
+    for (int i = 0; i < inputSize; i++) {
+        heap.push_back(input[i]);
+        heapify(input[i]);
+    }
 }
