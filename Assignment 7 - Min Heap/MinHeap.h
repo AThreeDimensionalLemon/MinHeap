@@ -1,7 +1,7 @@
 // 
 // Name: MinHeap.h
 // Author: Eisig Liang
-// Last update: 5/11/24
+// Last update: 9/11/24
 // Purpose: Do various things with a min heap
 // 
 
@@ -124,8 +124,5 @@ void MinHeap<T>::print() {
 template <typename T>
 void MinHeap<T>::sort(T input[], int inputSize) {
 
-    for (int i = 0; i < inputSize; i++) {
-        heap.push_back(input[i]);
-        heapify(input[i]);
-    }
+    for (int i = 0; i < inputSize; i++) insert(input[i]);
 }
