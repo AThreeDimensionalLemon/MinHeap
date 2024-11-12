@@ -1,7 +1,7 @@
 // 
 // Name: main.cpp
 // Author: Eisig Liang
-// Last update: 5/11/24
+// Last update: 12/11/24
 // Purpose: Test min heap implementation
 // Notices:
 //     1. ChatGPT was used to generated test cases
@@ -40,5 +40,9 @@ int main() {
     cout << "Testing sort function: ";
     char randomCharacters[10] = {'g', 'Z', 'p', 'Q', 'r', 'L', 'x', 'T', 'k', 'M'};
     charTest.sort(randomCharacters, 10);
+    cout << "Done!" << endl;
+
+    //Test print function
+    cout << "Testing print function: ";
     charTest.print();
 }
